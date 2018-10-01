@@ -4,7 +4,8 @@ from .models import Match
 
 
 class MatchAdmin(admin.ModelAdmin):
-    list_display = ('winner', 'loser', )
+    fields = ('winner', 'loser', )
+    list_display = ('created_at', 'winner', 'loser', )
     list_filter = ('created_at', )
 
 
