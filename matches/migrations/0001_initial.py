@@ -3,7 +3,8 @@
 from django.conf import settings
 from django.db import migrations, models
 import django.db.models.deletion
-import matches.models
+
+from base.models import FriendlyNameMixin
 import uuid
 
 
@@ -29,6 +30,6 @@ class Migration(migrations.Migration):
                 'ordering': ['-created_at'],
                 'abstract': False,
             },
-            bases=(models.Model, matches.models.FriendlyNameMixin),
+            bases=(models.Model, FriendlyNameMixin),
         ),
     ]

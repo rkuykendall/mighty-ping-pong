@@ -1,0 +1,7 @@
+docker build -t mighty_ping_pong .
+docker rm mpp
+sudo docker run \
+  -e DJANGO_SECRET_KEY="lol" \
+  -p 8000:8000 \
+  --name mpp \
+  mighty_ping_pong
