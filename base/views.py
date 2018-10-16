@@ -2,6 +2,7 @@ import operator
 from elo import Rating, rate_1vs1
 
 from django.http import JsonResponse
+from django.shortcuts import render
 
 from rest_framework.decorators import action
 from rest_framework import viewsets
@@ -9,6 +10,11 @@ from rest_framework import viewsets
 from base.models import Player
 from base.serializers import PlayerSerializer
 from matches.models import Match
+
+
+def index(request):
+    # return HttpResponse('Hello from Python!')
+    return render(request, 'index.html')
 
 
 class PlayerViewSet(viewsets.ModelViewSet):

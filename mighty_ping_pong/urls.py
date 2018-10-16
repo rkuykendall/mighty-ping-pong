@@ -28,6 +28,7 @@ router.register('matches', matches_views.MatchViewSet)
 router.register('players', base_views.PlayerViewSet)
 
 urlpatterns = [
+    url(r'^$', base_views.index, name='index'),
     path('admin/', admin.site.urls),
     url(r'^', include(router.urls)),
 ]
